@@ -60,20 +60,8 @@ function randomColor(min, max) {
     return Math.floor( Math.random() * (max - min + 1) + min);
 }
 
-function randomColorR() {
-    return randomColor(0, 255);   
-}
-
-function randomColorG() {
-    return randomColor(0, 255);
-}
-
-function randomColorB() {
-    return randomColor(0, 255);
-}
-
 function changeSquareColorRGB(grid) {
-    grid.style.backgroundColor = `rgb(${randomColorR}, ${randomColorG}, ${randomColorB})`;       
+    grid.style.backgroundColor = `rgb(${randomColor(0, 255)}, ${randomColor(0, 255)}, ${randomColor(0, 255)})`;       
 }
     
 function pressBtnRGB() {
@@ -83,5 +71,7 @@ function pressBtnRGB() {
         grid.addEventListener('mouseover', () => changeSquareColorRGB(grid)); 
     });
 }
+
+
 
 
