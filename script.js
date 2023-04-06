@@ -1,15 +1,13 @@
 
 createGrid();
-function page() {
-    
-    let grids = document.querySelectorAll('#grid');
+function page() {    
     let btnSquareNumber = document.getElementById('square-number');
+    let btnRGB = document.getElementById('btn-rgb');
+    let btnBlack = document.getElementById('btn-black');
 
-    grids.forEach(grid => {
-        grid.addEventListener('mouseover', () => changeSquareColor(grid)); 
-    });
-
-    btnSquareNumber.addEventListener('click', changeSquaresNumber);    
+    btnBlack.addEventListener('click', pressBtnBlack);
+    btnSquareNumber.addEventListener('click', changeSquaresNumber);
+    btnRGB.addEventListener('click', pressBtnRGB)   
 }
 
 function clearContainer() {
@@ -46,12 +44,44 @@ function createGrid(newSquareNumber) {
     page();    
 }
 
-function changeSquareColor(grid) {
-    grid.style.backgroundColor = 'black'
+function pressBtnBlack() {
+    let grids = document.querySelectorAll('#grid');
+
+    grids.forEach(grid => {
+        grid.addEventListener('mouseover', () => changeSquareColor(grid)); 
+    });
 }
 
+function changeSquareColor(grid) {
+    grid.style.backgroundColor = 'black';
+}
+
+function randomColor(min, max) {
+    return Math.floor( Math.random() * (max - min + 1) + min);
+}
+
+function randomColorR() {
+    return randomColor(0, 255);   
+}
+
+function randomColorG() {
+    return randomColor(0, 255);
+}
+
+function randomColorB() {
+    return randomColor(0, 255);
+}
+
+function changeSquareColorRGB(grid) {
+    grid.style.backgroundColor = `rgb(${randomColorR}, ${randomColorG}, ${randomColorB})`;       
+}
     
-
-
+function pressBtnRGB() {
+    let grids = document.querySelectorAll('#grid');
+    
+    grids.forEach(grid => {
+        grid.addEventListener('mouseover', () => changeSquareColorRGB(grid)); 
+    });
+}
 
 
