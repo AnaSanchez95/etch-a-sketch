@@ -13,7 +13,11 @@
       <h1>Etch A Sketch</h1>
     </header>
     <div>
-      <button id="square-number" class="btn">Square number</button>
+      <form id="squares-form">
+        <label>Select the number of squares per side:</label>
+        <input id="square-number" name="square-number" type="range" min="1" max="99" value="16">
+        <p id="result-squares"></p>
+      </form>     
       <button id="btn-black" class="btn">Black mode</button>
       <button id="btn-rgb" class="btn">RGB mode</button>
       <button id="bnt-black-opaque" class="btn">Black Opaque</button>

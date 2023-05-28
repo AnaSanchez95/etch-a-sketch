@@ -2,15 +2,18 @@ createGrid();
 
 
 function page() {
-  let btnSquareNumber = document.getElementById("square-number");
+  let rangeSquareNumber = document.getElementById("square-number");
   let btnBlack = document.getElementById("btn-black");
   let btnRGB = document.getElementById("btn-rgb");
   let btnBlackOpaque = document.getElementById("bnt-black-opaque");
+  let resultSquares = document.getElementById("result-squares");
 
-  btnSquareNumber.addEventListener("click", changeSquaresNumber);
+  rangeSquareNumber.addEventListener("change", () => changeSquaresNumber(rangeSquareNumber.value));
   btnBlack.addEventListener("click", pressBtnBlack);
   btnRGB.addEventListener("click", pressBtnRGB);
   btnBlackOpaque.addEventListener("click", pressBtnBlackOpaque);
+
+  resultSquares.innerText = rangeSquareNumber.value;
 }
 
 function clearContainer() {
@@ -18,15 +21,10 @@ function clearContainer() {
   container.innerHTML = "";
 }
 
-function changeSquaresNumber() {
-  let newSquareNumber = parseInt(prompt("Square Number"));
-
-  if (newSquareNumber <= 100 && newSquareNumber > 0) {
-    clearContainer();
-    createGrid(newSquareNumber);
-  } else {
-    alert("The number is not correct");
-  }
+function changeSquaresNumber(newSquareNumber) {  
+  clearContainer();
+  createGrid(newSquareNumber);
+ 
 }
 
 function createGrid(newSquareNumber) {
