@@ -25,7 +25,7 @@ body {
   #grid {
     border: 1px;
     border-style: solid;
-    background-color: #f4f1bb;
+    background-color: rgb(244, 241, 187);
     border-color: white;
     width: auto;
     height: auto;

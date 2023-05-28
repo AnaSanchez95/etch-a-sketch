@@ -1,5 +1,5 @@
 createGrid();
-let opaque = 0.1;
+
 
 function page() {
   let btnSquareNumber = document.getElementById("square-number");
@@ -45,7 +45,7 @@ function createGrid(newSquareNumber) {
   page();
 }
 
-function pressBtnBlackOpaque() {
+function pressBtnBlackOpaque() {  
   let grids = document.querySelectorAll("#grid");
 
   grids.forEach((grid) => {
@@ -56,13 +56,20 @@ function pressBtnBlackOpaque() {
 }
 
 function changeSquareColorBlackOpaque(grid) {
-   let gridColor = grid.style.backgroundColor;    
+   let style = getComputedStyle(grid);
+   let gridColor = style.backgroundColor;
 
-  if (gridColor === "rgba(0, 0, 0, 1)") {
-    opaque = 0.1;
-  } else  {
-    grid.style.backgroundColor = "rgba(0, 0, 0, " + opaque + ")"
-    opaque += 0.1;
+  switch (gridColor){
+    case "rgb(244, 241, 187)": grid.style.backgroundColor = "rgba(0, 0, 0, 0.1)" ;break;
+    case "rgba(0, 0, 0, 0.1)": grid.style.backgroundColor = "rgba(0, 0, 0, 0.2)" ;break;
+    case "rgba(0, 0, 0, 0.2)": grid.style.backgroundColor = "rgba(0, 0, 0, 0.3)" ;break;
+    case "rgba(0, 0, 0, 0.3)": grid.style.backgroundColor = "rgba(0, 0, 0, 0.4)" ;break;
+    case "rgba(0, 0, 0, 0.4)": grid.style.backgroundColor = "rgba(0, 0, 0, 0.5)" ;break;
+    case "rgba(0, 0, 0, 0.5)": grid.style.backgroundColor = "rgba(0, 0, 0, 0.6)" ;break;
+    case "rgba(0, 0, 0, 0.6)": grid.style.backgroundColor = "rgba(0, 0, 0, 0.7)" ;break;
+    case "rgba(0, 0, 0, 0.7)": grid.style.backgroundColor = "rgba(0, 0, 0, 0.8)" ;break;
+    case "rgba(0, 0, 0, 0.8)": grid.style.backgroundColor = "rgba(0, 0, 0, 0.9)" ;break;
+    case "rgba(0, 0, 0, 0.9)": grid.style.backgroundColor = "rgba(0, 0, 0, 1)" ;break;    
   }
 }
 
