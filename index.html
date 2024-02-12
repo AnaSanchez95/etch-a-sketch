@@ -12,17 +12,22 @@
     <header>
       <h1>Etch A Sketch</h1>
     </header>
-    <div>
-      <form id="squares-form">
-        <label>Select the number of squares per side:</label>
-        <input id="square-number" name="square-number" type="range" min="1" max="99" value="16">
-        <p id="result-squares"></p>
-      </form>     
-      <button id="btn-black" class="btn">Black mode</button>
-      <button id="btn-rgb" class="btn">RGB mode</button>
-      <button id="bnt-black-opaque" class="btn">Black Opaque</button>
-    </div>
-    <div id="container"></div>
-    <footer>Ana Sánchez</footer>
+    <div id="cuerpo">
+      <div id="botones">
+        <form id="squares-form">
+          <label>Grid Size</label>
+          <input id="square-number" name="square-number" type="range" min="1" max="99" value="16">
+          <p id="result-squares"></p>
+        </form>     
+        <button id="btn-black" class="btn">Black mode</button>
+        <button id="btn-rgb" class="btn">RGB mode</button>
+        <button id="bnt-black-opaque" class="btn">Black Opaque</button>
+        <button id="bnt-clean" class="btn">Clean</button>
+      </div>
+
+      <div id="container"></div>
+  </div>
+
+
   </body>
 </html>

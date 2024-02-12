@@ -5,6 +5,7 @@ function page() {
   let rangeSquareNumber = document.getElementById("square-number");
   let btnBlack = document.getElementById("btn-black");
   let btnRGB = document.getElementById("btn-rgb");
+  let btnClean = document.getElementById("btn-clean")
   let btnBlackOpaque = document.getElementById("bnt-black-opaque");
   let resultSquares = document.getElementById("result-squares");
 
@@ -12,6 +13,7 @@ function page() {
   btnBlack.addEventListener("click", pressBtnBlack);
   btnRGB.addEventListener("click", pressBtnRGB);
   btnBlackOpaque.addEventListener("click", pressBtnBlackOpaque);
+  btnClean.addEventListener("click", pressBtnClean);
 
   resultSquares.innerText = rangeSquareNumber.value;
 }
@@ -67,7 +69,9 @@ function changeSquareColorBlackOpaque(grid) {
     case "rgba(0, 0, 0, 0.6)": grid.style.backgroundColor = "rgba(0, 0, 0, 0.7)" ;break;
     case "rgba(0, 0, 0, 0.7)": grid.style.backgroundColor = "rgba(0, 0, 0, 0.8)" ;break;
     case "rgba(0, 0, 0, 0.8)": grid.style.backgroundColor = "rgba(0, 0, 0, 0.9)" ;break;
-    case "rgba(0, 0, 0, 0.9)": grid.style.backgroundColor = "rgba(0, 0, 0, 1)" ;break;    
+    case "rgba(0, 0, 0, 0.9)": grid.style.backgroundColor = "rgba(0, 0, 0, 1)" ;break;
+    case "rgba(0, 0, 0, 1)": ;break;
+    // default: grid.style.backgroundColor = "rgba(0, 0, 0, 0.1)" ;break;    
   }
 }
 
@@ -100,4 +104,9 @@ function pressBtnRGB() {
   grids.forEach((grid) => {
     grid.addEventListener("mouseover", () => changeSquareColorRGB(grid));
   });
+}
+function pressBtnClean(){
+  let container = document.getElementById("container");
+  container.innerHTML = "";
+  createGrid(16);
 }
